@@ -1,0 +1,183 @@
+.rooms {
+    background-color: #fcf8f3;
+    overflow-x: hidden;
+    @include adaptiv-value("padding-top", 44, 30, 1);
+    @include adaptiv-value("padding-bottom", 44, 30, 1);
+    // .rooms__container
+    &__container {
+        @media (min-width: 993px) {
+            display: flex;
+        }
+    }
+    // .rooms__body
+    &__body {
+        flex: 0 0 40%;
+        position: relative;
+        z-index: 5;
+        align-self: center;
+        @media (min-width: 993px) {
+            @include adaptiv-value("padding-right", 80, 30, 1);
+        }
+        @media (max-width: 992px) {
+            margin-bottom: 30px;
+        }
+    }
+    // .rooms__title
+    &__title {
+        margin-bottom: 8px;
+        text-align: left;
+    }
+    // .rooms__text
+    &__text {
+        line-height: 150%;
+        font-weight: 500;
+        &:not(:last-child) {
+            margin: 0 0 24px 0;
+        }
+    }
+    // .rooms__button
+    &__button {
+        background: $orange-color;
+        color: #fff;
+        min-width: 180px;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #8d6146;
+            }
+        }
+    }
+    // .rooms__slider
+    &__slider {
+        flex: 1 1 auto;
+        min-width: 0;
+        align-self: flex-start;
+        @media (max-width: 480px) {
+            margin: 0 -15px;
+        }
+    }
+}
+
+
+
+.slider-rooms {
+    position: relative;
+    // .slider-rooms__content
+    &__content {
+        position: absolute;
+        text-decoration: none;
+        color: inherit;
+        max-width: 240px;
+        @include adaptiv-value("left", 24, 15, 1);
+        @include adaptiv-value("bottom", 24, 15, 1);
+        @include adaptiv-value("padding", 32, 15, 1);
+        background: rgba(255, 255, 255, 0.9);
+        @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+            background:rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(31px);
+        }
+        &:before {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(100%, 0px);
+            width: 48px;
+            height: 48px;
+            background-color: $orange-color;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    // .slider-rooms__title
+    &__title {
+        font-weight: 600;
+        @include adaptiv-value("font-size", 28, 24, 1);
+    }
+    // .slider-rooms__body
+    &__body {
+        overflow: visible;
+        position: relative;
+        &:before {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100vw;
+            background-color: #fcf8f3;
+            z-index: 2;
+            transform: translateX(-100%);
+        }
+    }
+    &__slide {
+        width: 372px;
+        overflow: hidden;
+        @include adaptiv-value("min-height", 585, 400, 1);
+        &.swiper-slide-active {
+            .slider-rooms__image {
+                @include adaptiv-value("height", 585, 400, 1);
+            }
+        }
+        @media (max-width: 480px) {
+            width: 100%;
+        }
+    }
+    // .slider-rooms__image
+    &__image {
+        transition: height 0.8s ease 0s;
+        @include adaptiv-value("height", 585, 400, 1);
+        @media (min-width: 769px) {
+            @include adaptiv-value("height", 489, 400, 1);
+        }
+    }
+
+    // .slider-rooms__arrows
+    &__arrows {
+        pointer-events: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: calc(100% - 48px);
+        left: 24px;
+        z-index: 5;
+        justify-content: space-between;
+        @media (min-width: 1200px) {
+            left: -24px;
+            width: calc(100% + 48px);
+        }
+    }
+    // .slider-rooms__dots
+    &__dots {
+        z-index: 100;
+        @media (min-width: 769px) {
+            position: absolute;
+            bottom: 30px!important;
+            width: 100%!important;
+            left: 396px!important;
+        }
+        @media (max-width: 768px) {
+            justify-content: center;
+            padding-top: 15px;
+        }
+    }
+}
+
+.label-slider {
+    display: grid;
+    color: $darkGrey-color;
+    gap: 8px;
+    align-items: center;
+    justify-content: start;
+    grid-template-columns: auto 27px auto;
+    margin-bottom: 8px;
+    // .label-slider__line
+    &__line {
+        height: 1px;
+        background-color: $darkGrey-color;
+    }
+}
+
+.slider-arrow {
+    pointer-events: auto;
+}

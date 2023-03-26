@@ -1,0 +1,183 @@
+.products {
+    @include adaptiv-value("padding-bottom", 44, 30, 1);
+    // .products__title
+    &__title {
+        margin: 0 0 32px 0;
+    }
+    // .products__items
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+        gap: 32px;
+    }
+    &__footer {
+        padding: 32px 0 0 0;
+        text-align: center;
+   }
+   &__more {
+    border:1px solid $orange-color;
+    min-width: 245px;
+    &._hold {
+        opacity: 0.4;
+        cursor: default;
+    }
+   }
+}
+
+.item-product {
+    background: #F4F5F7;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @media (any-hover: hover) {
+        &:hover {
+            .item-product__actions {
+                opacity: 1;
+                visibility: visible;
+                transition: all 0.3s ease 0s;
+            }
+        }
+    }
+    // .item-product__labels
+    &__labels {
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        @include adaptiv-value("right", 24, 10, 1);
+        @include adaptiv-value("top", 24, 10, 1);
+    }
+    // .item-product__label
+    &__label {
+        flex: 0 0 48px;
+        width: 48px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color:#fff;
+        font-weight: 500;
+        &:not(:last-child) {
+            margin: 0 0 10px 0;
+        }
+        // .item-product__label_sale
+        &_sale {
+            background: #E97171;
+        }
+        &_new {
+            background: #2EC1AC;
+        }
+    }
+    // .item-product__image
+    &__image {
+        padding: 0 0 100% 0;
+    }
+    // .item-product__body
+    &__body {
+        flex: 1 1 auto;
+        padding: 16px 16px 30px 16px;
+        display: flex;
+        flex-direction: column;
+    }
+    // .item-product__content
+    &__content {
+        flex: 1 1 auto;
+    }
+    // .item-product__title
+    &__title {
+        @include adaptiv-value("font-size", 24, 20, 1);
+        font-weight: 600;
+        line-height: 120%;
+        margin-bottom: 8px;
+    }
+    // .item-product__text
+    &__text {
+        color:$grey-color;
+        line-height: 150%;
+        margin-bottom: 8px;
+    }
+    // .item-product__prices
+    &__prices {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        line-height: 150%;
+    }
+    // .item-product__price
+    &__price {
+        @include adaptiv-value("font-size", 20, 16, 1);
+        font-weight: 600;
+        // .item-product__price_old
+        &_old {
+            @include adaptiv-value("font-size", 16, 14, 1);
+            font-weight: normal;
+            margin: 0 0 0 16px;
+            color: #b0b0b0;
+            text-decoration: line-through;
+        }
+    }
+    // .item-product__actions
+    &__actions {
+        @media (any-hover: none) {
+            padding: 15px 0 0 0;
+        }
+        @media (any-hover: hover) {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(58, 58, 58, 0.74);
+            z-index: 3;
+            transition: all 0.3s ease 0s;
+        }
+    }
+}
+.actions-product {
+    // .actions-product__body
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    // .actions-product__button
+    &__button {
+        flex: 1 1 100%;
+        &:not(:last-child) {
+            margin: 0 0 24px 0;
+        }
+        &._hold {
+            opacity: 0.6;
+            cursor: default;
+        }
+    }
+    // .actions-product__link
+    &__link {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease 0s;
+        &:before {
+            margin: 0 10px 0 0;
+            font-size: 16px;
+            display: inline-block;          
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                color: $orange-color;
+            }
+        }
+        @media (any-hover:none) {
+            color: $orange-color;
+        }
+    }
+}
+
+

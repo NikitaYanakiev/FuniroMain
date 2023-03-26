@@ -1,0 +1,193 @@
+.main-slider {
+    background-color:#FCF8F3;
+    overflow-x: hidden;
+    &__container {
+        position: relative;
+        @media (min-width: 993px) {
+            &:before {
+                content:'';
+                background-color: #F9F1E7;
+                position: absolute;
+                top: 0;
+                width: 100vw;
+                right: 376px;
+                height: 100%;
+            }
+        }
+    }
+    &__body {
+        padding: 140px 0 0 0;
+        position: relative;
+        z-index: 2;
+        @media (max-width: 992px) {
+            padding: 80px 0 0 0;
+        }
+        @media (max-width: 768px) {
+            padding: 50px 0 0 0;
+        }
+        @media (min-width: 993px) {
+            display: flex;
+        }
+    }
+    &__content {
+        align-self: flex-start;
+        flex: 0 0 40%;
+        @include adaptiv-value("margin-bottom", 80, 15, 1);
+        @media (max-width: 992px) {
+            margin: 0 -15px;
+        }
+    }
+    &__slider {
+        flex: 1 1 auto;
+        min-width: 0;
+        align-self:flex-end;
+        @media (min-width:993px) {
+            padding: 0 0 0 32px;
+        }
+    }
+}
+
+.content-main {
+    position: relative;
+    z-index: 5;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: rgba(255, 255, 255, 0.72);
+    @include adaptiv-value("padding-top", 60, 15, 1);
+    @include adaptiv-value("padding-bottom", 60, 15, 1);
+    @media (min-width: 993px) {
+        @include adaptiv-value("padding", 60, 1, 1);
+        background: rgba(255, 255, 255, 0.9);
+        @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+            background:rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(31px);
+        }
+    }
+    &__title {
+        @include adaptiv-value("font-size", 55, 24, 1);
+        font-weight: 700;
+        line-height: 120%;
+        &:not(:last-child) {
+            margin: 0 0 5px 0;
+        }
+    }
+    &__text {
+        @include adaptiv-value("font-size", 20, 16, 1);
+        color: $grey-color;
+        font-weight: 500;
+        line-height: 150%;
+        &:not(:last-child) {
+            margin: 0 0 40px 0;
+        }
+    }
+    &__button {
+        font-weight: 600;
+        text-decoration: none;
+        @include adaptiv-value("min-height", 78, 45, 1);
+        @include adaptiv-value("font-size", 20, 16, 1);
+        background-color: $orange-color;
+        color: #fff;
+        width: 100%;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #a5633b;
+            }
+        }
+    }
+}
+
+.slider-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @media (max-width: 992px) {
+        align-items: stretch;
+        flex-direction: column-reverse;
+    }
+    &__slide {
+        position: relative;
+    }
+    &__controls {
+        align-self: stretch;
+        margin: 0 0 20px 0;
+        @media (min-width: 993px) {
+            margin: 10px 0 20px 0;
+        }
+    }
+    &__body {
+        overflow: visible;
+        @media (min-width: 993px) {
+            @include adaptiv-value("width", 934, 290, 1);
+        }
+        @media (max-width: 992px) {
+            margin: 0 -15px;
+        }
+    }
+    &__image {
+        padding: 0 0 59.1% 0;
+    }
+    &__content {
+        min-width: 295px;
+        max-height: 300px;
+        overflow: auto;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        @include adaptiv-value("padding", 24, 15, 1);
+        background:rgba(255, 255, 255, 0.9);
+        @media (min-width: 769px) {
+            position: absolute;
+            min-width: 350px;
+            @include adaptiv-value("bottom", 40, 0, 1);
+            @include adaptiv-value("right", 40, 0, 1);
+        }
+        @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+            background:rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(31px);
+        }
+    }
+    &__title {
+        @include adaptiv-value("font-size", 28, 22, 1);
+        font-weight: 600;
+        line-height: 120%;
+        margin: 0 0 4px 0;
+    }
+    &__text {
+        line-height: 150%;
+        color: $grey-color;
+        margin: 0 0 8px 0;
+    }
+    &__price {
+        display: flex;
+        flex-direction: row-reverse;
+        line-height: 150%;
+        align-items: center;
+        font-weight: 600;
+        justify-content: space-between;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        &:before {
+            margin: 0 0 0 10px;
+            font-weight: 700;
+        }
+    }
+}
+
+.controls-slider-main {
+    display: flex;
+    align-items: center;
+    &__dots {
+        flex: 1 1 auto;
+        @media (min-width: 993px) {
+            padding: 0 20px 0 0;
+        }
+        @media (max-width: 992px) {
+            justify-content: center;
+        }
+    }
+    &__arrows {
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+}

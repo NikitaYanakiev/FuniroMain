@@ -1,0 +1,46 @@
+@import 'libs/null';
+@import 'libs/fonts';
+@import 'libs/icons-fonts';
+@import 'libs/swiper-bundle.min';
+@import 'base/mixins';
+@import 'base/variables';
+
+* {
+    font-family: 'Girloy', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+body {
+    font-size: 16px;
+    color: $main-color;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1270px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+
+@import 'blocks/header';
+@import 'blocks/menu';
+@import 'blocks/footer';
+@import 'blocks/ui';
+@import 'blocks/main-slider';
+@import 'blocks/advantages';
+@import 'blocks/products';
+@import 'blocks/rooms';
+@import 'blocks/tips';
+@import 'blocks/furniture';
+@import 'blocks/preloader';
+
+.page {
+    flex: 1 1 auto;
+}
+
+
+
